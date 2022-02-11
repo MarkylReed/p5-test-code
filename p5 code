@@ -1,0 +1,39 @@
+var dotWidth = 20;
+
+function setup() {
+  createCanvas(500, 400);
+  background(0);
+}
+
+function draw() {
+  if (mouseIsPressed) {
+    background(mouseX, 0, mouseY);
+  }
+
+  stroke(255, 255, 255);
+  fill(160, mouseX, mouseY, 9);
+  ellipse(mouseX, 200, 300, 300);
+
+  fill(255, 255, 255, 5);
+  dotWidth = dotWidth + 1;
+  if (dotWidth > 70) {
+    dotWidth = 30;
+  }
+  ellipse(mouseX, mouseY, dotWidth, 70);
+ 
+  fill(40, 220, 255, 5);
+  ellipse(mouseY, 20, 30, 30);
+ 
+  fill(40, 220, 255, 5);
+  dotWidth = dotWidth + 1;
+  if (dotWidth > 70) {
+    dotWidth = 30;
+  }
+  rect(mouseY, 20, dotWidth, 30);
+ 
+  fill(255, mouseX, mouseY, 5);
+  quad(mouseX, 131, 86, 10, mouseY, 363, 230, 276);
+ 
+  fill(40, 220, 255, 5);
+  triangle(mouseY, 20, 30, 30, mouseX, 40);
+}
